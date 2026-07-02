@@ -5,9 +5,11 @@ const COLORS = ['pink', 'green', 'blue', 'yellow', 'purple'];
 
 function App() {
   const [backgroundColor, setBackgroundColor] = useState(COLORS[0]);
+  const [click, setClick] = useState(0);
 
   const onButtonClick = (color) => () => {
     setBackgroundColor(color);
+    setClick(click+1);
   };
 
   return (
@@ -27,6 +29,8 @@ function App() {
           {color}
         </button>
       ))}
+      <br /><br />
+      <p>Total Clicks: <b>{click}</b></p>
     </div>
   );
 }
